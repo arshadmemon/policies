@@ -15,5 +15,5 @@ spec:
   settings:
     registries:
       reject:
-      - docker.io
+    
       
