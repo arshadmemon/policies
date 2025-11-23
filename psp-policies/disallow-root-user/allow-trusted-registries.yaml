@@ -1,3 +1,4 @@
+# test policy
 apiVersion: policies.kubewarden.io/v1
 kind: ClusterAdmissionPolicy
 metadata:
