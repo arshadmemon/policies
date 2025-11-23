@@ -4,8 +4,6 @@ kind: ClusterAdmissionPolicy
 metadata:
   name: trusted-repos
 spec:
-    verificationConfig:
-    enabled: false
   module: registry://ghcr.io/kubewarden/policies/trusted-repos:v2.0.3
   mode: protect
   mutating: false
@@ -17,7 +15,7 @@ spec:
   settings:
     registries:
       reject:
-      - ghcr.io
+       - ghcr.io
       
 
     
