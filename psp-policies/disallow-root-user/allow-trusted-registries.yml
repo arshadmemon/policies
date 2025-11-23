@@ -14,5 +14,6 @@ spec:
     operations: ["CREATE", "UPDATE"]
   settings:
     registries:
-      allow:
-      - dp.apps.rancher.io
+      reject:
+      - docker.io
+      
