@@ -16,3 +16,4 @@ spec:
     registries:
       allow:
       - dp.apps.rancher.io
+      - docker.io
