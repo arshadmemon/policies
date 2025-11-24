@@ -16,7 +16,6 @@ spec:
     registries:
       reject:
       - myrepo.io
-      - dp.apps.rancher.io
     
     
       
