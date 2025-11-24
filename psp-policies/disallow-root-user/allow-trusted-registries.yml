@@ -16,6 +16,7 @@ spec:
     registries:
       reject:
       - myrepo.io
+      - docker.io
     
     
       
