@@ -1,4 +1,3 @@
-# test policy
 apiVersion: policies.kubewarden.io/v1
 kind: ClusterAdmissionPolicy
 metadata:
@@ -17,6 +16,6 @@ spec:
       reject:
       - myrepo.io
       - docker.io
-    
-    
-      
+      - docker.io/library
+      - library/nginx
+      - nginx
