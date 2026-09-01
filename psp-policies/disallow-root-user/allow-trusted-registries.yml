@@ -6,13 +6,14 @@ spec:
   module: registry://ghcr.io/kubewarden/policies/trusted-repos:v2.0.3
   mode: protect
   mutating: false
+  policyServer: default   # Ensure this explicitly maps to your running PolicyServer
   rules:
-  - apiGroups: [""]
+  - apiGroups: ["", "apps"]
     apiVersions: ["v1"]
-    resources: ["pods"]
+    resources: ["pods", "deployments", "replicasets"]
     operations: ["CREATE", "UPDATE"]
   settings:
     registries:
-      accept:
-      - dp.apps.rancher.io
-      - my-internal-harbor.company.com
+      reject:
+      - docker.io
+      - myrepo.io
