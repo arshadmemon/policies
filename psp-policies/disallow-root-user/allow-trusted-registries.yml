@@ -1,20 +1,18 @@
 apiVersion: policies.kubewarden.io/v1
 kind: ClusterAdmissionPolicy
 metadata:
-  name: enforce-trusted-registries
+  name: trusted-repos
 spec:
-  module: registry://ghcr.io/kubewarden/policies/wildcard-policy:v0.1.0
+  module: registry://ghcr.io/kubewarden/policies/trusted-repos:v2.0.3
   mode: protect
   mutating: false
   rules:
-  - apiGroups: ["", "apps"]
+  - apiGroups: [""]
     apiVersions: ["v1"]
-    resources: ["pods", "deployments", "replicasets"]
+    resources: ["pods"]
     operations: ["CREATE", "UPDATE"]
   settings:
-    rule:
-      # Block anything that doesn't explicitly start with your trusted registry
-      deny:
-      - "nginx*"
-      - "*docker.io*"
-      - "library/*"
+    registries:
+      accept:
+      - dp.apps.rancher.io
+      - my-internal-harbor.company.com
